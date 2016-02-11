@@ -1,0 +1,19 @@
+{layout '@layout.latte'}
+
+{block title}Example{/block}
+
+{block content}
+	Jméno: {$name} {$surname}<br>
+    Věk: {date('Y') - $birth}<br>
+
+    <hr>
+
+    <table>
+    	<th>Jméno</th>
+    	<th>Email</th>
+		<tr n:foreach="$users as $user">
+			<td>{$user['name']}</td>
+			<td>{$user['email']}</td>
+		</tr>
+    </table>
+{/block}
